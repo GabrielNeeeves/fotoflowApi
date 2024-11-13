@@ -96,6 +96,37 @@ CALL SP_cadCliente('Pedro', 'pedro@gmail.com', 'p3dr@a0', '(12)34434-5544', 'Rua
 
 SELECT * FROM v_clientes
 
+--ATUALIZAR CLIENTE
+CREATE PROCEDURE sp_atualizarCliente (
+	cliente_id int,
+	novo_nome VARCHAR(200),
+    novo_email VARCHAR(200),
+    novo_senha VARCHAR(200),
+    novo_tel VARCHAR(200),
+    novo_ende VARCHAR(200)
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+	-- Verificar se o cliente_id existe na tabela CLIENTES
+    IF NOT EXISTS (SELECT 1 FROM CLIENTES WHERE ID_CLIENTE = CLIENTE_ID) THEN
+        RAISE EXCEPTION 'Fotógrafo com ID % não encontrado.', CLIENTE_ID;
+    END IF;
+
+    -- Atualizar os dados do CLIENTE na tabela USUARIOS
+    UPDATE USUARIOS
+    SET NOME = novo_nome,
+        EMAIL = novo_email,
+        SENHA = novo_senha,
+        TELEFONE = novo_tel,
+        ENDERECO = novo_ende
+    WHERE ID_USUARIO = CLIENTE_ID;
+END;
+$$;
+
+CALL SP_ATUALIZARCLIENTE(3, 'Jose', 'jos@gmail.com', '123456789', '(34)34543-5454', 'Rua Exemplo, 789')
+
+SELECT * FROM V_CLIENTES
 
 --CADASTRAR ALBUM
 CREATE PROCEDURE SP_cadAlbum (
