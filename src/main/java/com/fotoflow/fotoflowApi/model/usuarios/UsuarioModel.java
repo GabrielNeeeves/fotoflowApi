@@ -6,8 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "usuarios")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "USUARIOS")
+//@Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @Setter
 public class UsuarioModel {
@@ -26,12 +26,6 @@ public class UsuarioModel {
 
     private String endereco;
 
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, optional = true)
-    private FotografoModel fotografo;
-
-    @Enumerated(EnumType.STRING)
-    private TipoUsuario tipoUsuario;
-
     public UsuarioModel(){}
 
     public UsuarioModel(UsuarioDto dto) {
@@ -40,7 +34,6 @@ public class UsuarioModel {
         this.senha = dto.senha();
         this.telefone = dto.tel();
         this.endereco = dto.endereco();
-        this.tipoUsuario = dto.tipoUsuario();
     }
 
     public Long getId_usuario() {
@@ -89,13 +82,5 @@ public class UsuarioModel {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
-    }
-
-    public TipoUsuario getTipoUsuario() {
-        return tipoUsuario;
-    }
-
-    public void setTipoUsuario(TipoUsuario tipoUsuario) {
-        this.tipoUsuario = tipoUsuario;
     }
 }

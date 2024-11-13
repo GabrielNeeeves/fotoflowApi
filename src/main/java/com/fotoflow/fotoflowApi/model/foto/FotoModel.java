@@ -1,10 +1,9 @@
 package com.fotoflow.fotoflowApi.model.foto;
 
-import com.fotoflow.fotoflowApi.model.album.AlbumModel;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "fotos")
+@Table(name = "FOTOS")
 public class FotoModel {
 
     @Id
@@ -14,9 +13,4 @@ public class FotoModel {
     private String url;
 
     private String descricao;
-
-    // Relacionamento com Album
-    @ManyToOne
-    @JoinColumn(name = "album_id", nullable = false)
-    private AlbumModel album;
 }

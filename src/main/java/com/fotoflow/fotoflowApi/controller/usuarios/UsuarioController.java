@@ -59,7 +59,6 @@ public class UsuarioController {
             userUpt.setSenha(u.getSenha());
             userUpt.setEndereco(u.getEndereco());
             userUpt.setTelefone(u.getTelefone());
-            userUpt.setTipoUsuario(u.getTipoUsuario());
 
             repo.deleteById(u.getId_usuario());
             repo.save(userUpt);

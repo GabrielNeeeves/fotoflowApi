@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table(name = "album")
+@Table(name = "ALBUM")
 @NoArgsConstructor
 @AllArgsConstructor
 public class AlbumModel {
@@ -24,17 +24,50 @@ public class AlbumModel {
     private String tipoFotografia;
 
     //BRONZE, PRATA, OURO - para determinar o preço final
+    @Enumerated(EnumType.STRING)
     private TipoPacote tipoPacote;
 
-    //número de likes no álbum
-    private Long curtidas;
+    private Integer curtidas;
 
-    // Relacionamento com Foto
-    @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<FotoModel> fotos;
+    //public AlbumModel() {}
 
-    // Relacionamento com Fotografo
-    @ManyToOne
-    @JoinColumn(name = "fotografo_id", nullable = false)
-    private FotografoModel fotografo;
+    public Long getId_album() {
+        return id_album;
+    }
+
+    public void setId_album(Long id_album) {
+        this.id_album = id_album;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getTipoFotografia() {
+        return tipoFotografia;
+    }
+
+    public void setTipoFotografia(String tipoFotografia) {
+        this.tipoFotografia = tipoFotografia;
+    }
+
+    public TipoPacote getTipoPacote() {
+        return tipoPacote;
+    }
+
+    public void setTipoPacote(TipoPacote tipoPacote) {
+        this.tipoPacote = tipoPacote;
+    }
+
+    public Integer getCurtidas() {
+        return curtidas;
+    }
+
+    public void setCurtidas(Integer curtidas) {
+        this.curtidas = curtidas;
+    }
 }

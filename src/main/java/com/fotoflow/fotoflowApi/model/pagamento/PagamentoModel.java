@@ -20,21 +20,16 @@ public class PagamentoModel {
 
     private Double valor;
 
+    @Enumerated(EnumType.STRING)
     private TipoPagamento tipoPagamento;
 
-    private StatusPagamento statusPagamento;
+    private StatusPagamento status;
 
-    private LocalDate dataCriacao;
+    private LocalDate data_criacao;
 
-    private LocalDate dataVencimento;
+    private LocalDate data_vencimento;
 
-    // Relacionamento com Usuario
-    @ManyToOne
-    @JoinColumn(name = "usuario_id", nullable = false)
-    private UsuarioModel usuario;
+    private Long usuario_id;
 
-    // Relacionamento com Fotografo
-    @ManyToOne
-    @JoinColumn(name = "fotografo_id", nullable = false)
-    private FotografoModel fotografo;
+    private Long fotografo_id;
 }
