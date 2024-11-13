@@ -1,13 +1,10 @@
 package com.fotoflow.fotoflowApi.model.pagamento;
 
-import com.fotoflow.fotoflowApi.model.usuarios.UsuarioModel;
-import com.fotoflow.fotoflowApi.model.usuarios.fotografo.FotografoModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.sql.Date;
 
 @Entity
 @Table(name = "pagamentos")
@@ -25,15 +22,26 @@ public class PagamentoModel {
 
     private String status;
 
-    private Date data_criacao;
+    private LocalDate data_criacao;
 
-    private Date data_vencimento;
+    private LocalDate data_vencimento;
 
-    private Long usuario_id;
+    private Integer cliente_id;
 
-    private Long fotografo_id;
+    private Integer fotografo_id;
 
     //public PagamentoModel(){}
+
+    public PagamentoModel(PagamentoDto dto) {
+        valor = dto.valor();
+        tipoPagamento = dto.tipo_pagamento();
+        status = dto.status();
+        data_criacao = dto.data_criacao();
+        data_vencimento = dto.data_vencimento();
+        cliente_id = dto.cliente_id();
+        fotografo_id = dto.fotografo_id();
+
+    }
 
     public Long getId_pagamento() {
         return id_pagamento;
@@ -67,35 +75,35 @@ public class PagamentoModel {
         this.status = status;
     }
 
-    public Date getData_criacao() {
+    public LocalDate getData_criacao() {
         return data_criacao;
     }
 
-    public void setData_criacao(Date data_criacao) {
+    public void setData_criacao(LocalDate data_criacao) {
         this.data_criacao = data_criacao;
     }
 
-    public Date getData_vencimento() {
+    public LocalDate getData_vencimento() {
         return data_vencimento;
     }
 
-    public void setData_vencimento(Date data_vencimento) {
+    public void setData_vencimento(LocalDate data_vencimento) {
         this.data_vencimento = data_vencimento;
     }
 
-    public Long getUsuario_id() {
-        return usuario_id;
+    public Integer getCliente_id() {
+        return cliente_id;
     }
 
-    public void setUsuario_id(Long usuario_id) {
-        this.usuario_id = usuario_id;
+    public void setCliente_id(Integer cliente_id) {
+        this.cliente_id = cliente_id;
     }
 
-    public Long getFotografo_id() {
+    public Integer getFotografo_id() {
         return fotografo_id;
     }
 
-    public void setFotografo_id(Long fotografo_id) {
+    public void setFotografo_id(Integer fotografo_id) {
         this.fotografo_id = fotografo_id;
     }
 }

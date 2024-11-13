@@ -1,10 +1,13 @@
 package com.fotoflow.fotoflowApi.repository.pagamento;
 
 import com.fotoflow.fotoflowApi.model.pagamento.PagamentoModel;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.query.Procedure;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public interface PagamentoRepository extends JpaRepository<PagamentoModel, Long> {
 
