@@ -25,7 +25,7 @@ public class UsuarioController {
     }
 
     //POST
-    @PostMapping
+    @PostMapping("/post")
     public ResponseEntity postUser(@RequestBody UsuarioDto dto) {
         try {
             var novoUsuario = new UsuarioModel(dto);
@@ -37,7 +37,7 @@ public class UsuarioController {
     }
 
     //DELETE
-    @DeleteMapping("/{id}")
+    @DeleteMapping("delete/{id}")
     public ResponseEntity delUser(@PathVariable Long id) {
         Optional<UsuarioModel> userOpt = repo.findById(id);
         if(userOpt.isPresent()) {
@@ -48,7 +48,7 @@ public class UsuarioController {
     }
 
     //PUT
-    @PutMapping("/{id}")
+    @PutMapping("put/{id}")
     public ResponseEntity putUser(@PathVariable Long id, @RequestBody UsuarioModel u) {
         Optional<UsuarioModel> userOpt = repo.findById(id);
         if(userOpt.isPresent()) {

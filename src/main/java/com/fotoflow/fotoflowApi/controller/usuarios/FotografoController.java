@@ -29,7 +29,7 @@ public class FotografoController {
     }
 
     //POST
-    @PostMapping
+    @PostMapping("/post")
     public void cadastrarFotografo(@RequestBody FotografoDto fotografoDto) {
         service.cadastrarFotografo(
                 fotografoDto.nome(),
@@ -43,7 +43,7 @@ public class FotografoController {
     }
 
     //DELETE BY ID
-    @DeleteMapping("/{id}")
+    @DeleteMapping("delete/{id}")
     public ResponseEntity delFotografo(@PathVariable Long id) {
         Optional<FotografoModel> fotOpt = repo.findById(id);
 
@@ -56,7 +56,7 @@ public class FotografoController {
     }
 
     //PUT BY ID
-    @PutMapping("/{id}")
+    @PutMapping("put/{id}")
     public ResponseEntity putFotografo(@PathVariable Long id, @RequestBody FotografoDto dto) {
         Optional<FotografoModel> fotOpt = repo.findById(id);
 

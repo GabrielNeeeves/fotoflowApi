@@ -24,10 +24,11 @@ public class AlbumModel {
     private String tipoFotografia;
 
     //BRONZE, PRATA, OURO - para determinar o preço final
-    @Enumerated(EnumType.STRING)
-    private TipoPacote tipoPacote;
+    private String tipoPacote;
 
     private Integer curtidas;
+
+    private Integer fotografo_id;
 
     //public AlbumModel() {}
 
@@ -55,11 +56,11 @@ public class AlbumModel {
         this.tipoFotografia = tipoFotografia;
     }
 
-    public TipoPacote getTipoPacote() {
+    public String getTipoPacote() {
         return tipoPacote;
     }
 
-    public void setTipoPacote(TipoPacote tipoPacote) {
+    public void setTipoPacote(String tipoPacote) {
         this.tipoPacote = tipoPacote;
     }
 
@@ -69,5 +70,13 @@ public class AlbumModel {
 
     public void setCurtidas(Integer curtidas) {
         this.curtidas = curtidas;
+    }
+
+    public Integer getFotografo_id() {
+        return fotografo_id;
+    }
+
+    public void setFotografo_id(Integer fotografo_id) {
+        this.fotografo_id = fotografo_id;
     }
 }

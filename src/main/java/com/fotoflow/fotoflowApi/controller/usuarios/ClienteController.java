@@ -27,13 +27,13 @@ public class ClienteController {
         return repo.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/post")
     public ResponseEntity post(@RequestBody ClienteDto dto) {
         service.cadCliente(dto.nome(), dto.email(), dto.senha(), dto.tel(), dto.ende());
         return new ResponseEntity("Cliente cadastrado", HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("delete/{id}")
     public ResponseEntity del(@PathVariable Long id) {
         var cliOpt = repo.findById(id);
         if(cliOpt.isPresent()) {
@@ -43,7 +43,7 @@ public class ClienteController {
         return new ResponseEntity(HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("put/{id}")
     public ResponseEntity put(@PathVariable Long id, @RequestBody ClienteDto dto) {
         var cliOpt = repo.findById(id);
 
