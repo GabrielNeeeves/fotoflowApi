@@ -1,4 +1,4 @@
-package com.fotoflow.fotoflowApi.controller.usuarios.fotografo;
+package com.fotoflow.fotoflowApi.controller.usuarios;
 
 import com.fotoflow.fotoflowApi.model.usuarios.fotografo.FotografoDto;
 import com.fotoflow.fotoflowApi.model.usuarios.fotografo.FotografoModel;

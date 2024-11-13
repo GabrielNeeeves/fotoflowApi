@@ -20,6 +20,8 @@ public class ClienteModel{
         return id_cliente;
     }
 
+    public ClienteModel(){}
+
     public void setId_cliente(Long id_cliente) {
         this.id_cliente = id_cliente;
     }
