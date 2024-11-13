@@ -293,7 +293,7 @@ BEGIN
 		RAISE EXCEPTION 'Fotografo com ID % não encontrado.', sp_FOTOGRAFO_ID;
     END IF;
 
-	insert into pagamentos (valor, TIPO_PAGAMENTO, STATUS, DATA_CRIACAO, DATA_VENCIMENTO, USUARIO_ID, FOTOGRAFO_ID) values
+	insert into pagamentos (valor, TIPO_PAGAMENTO, STATUS, DATA_CRIACAO, DATA_VENCIMENTO, CLIENTE_ID, FOTOGRAFO_ID) values
 	(sp_VALOR, sp_TIPO_PAGAMENTO, sp_STATUS, sp_DATA_CRIACAO, sp_DATA_VENCIMENTO, sp_CLIENTE_ID, sp_FOTOGRAFO_ID);
 END;
 $$;
@@ -341,7 +341,7 @@ BEGIN
 		status = sp_STATUS,
 		data_criacao = sp_data_criacao,
 		data_vencimento = sp_data_vencimento,
-		usuario_id = sp_CLIENTE_ID,
+		CLIENTE_ID = sp_CLIENTE_ID,
 		fotografo_id = sp_fotografo_id
 	where id_pagamento = pagamento_id;
 END;
