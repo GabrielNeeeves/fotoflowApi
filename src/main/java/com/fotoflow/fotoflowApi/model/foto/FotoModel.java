@@ -14,7 +14,7 @@ public class FotoModel {
     private String url;
 
     private String descricao;
-//kl
+
     // Relacionamento com Album
     @ManyToOne
     @JoinColumn(name = "album_id", nullable = false)
