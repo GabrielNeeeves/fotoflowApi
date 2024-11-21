@@ -2,7 +2,9 @@ package com.fotoflow.fotoflowApi.controller.usuarios;
 
 import com.fotoflow.fotoflowApi.model.usuarios.cliente.ClienteDto;
 import com.fotoflow.fotoflowApi.model.usuarios.cliente.ClienteModel;
+import com.fotoflow.fotoflowApi.model.usuarios.cliente.ClienteView;
 import com.fotoflow.fotoflowApi.repository.usuarios.ClienteRepository;
+import com.fotoflow.fotoflowApi.repository.usuarios.ClienteViewRepository;
 import com.fotoflow.fotoflowApi.service.usuarios.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,12 +21,15 @@ public class ClienteController {
     private ClienteRepository repo;
 
     @Autowired
+    private ClienteViewRepository clienteViewRepository;
+
+    @Autowired
     private ClienteService service;
 
     //GET
     @GetMapping
-    public List<ClienteModel> get() {
-        return repo.findAll();
+    public List<ClienteView> get() {
+        return clienteViewRepository.findAll();
     }
 
     @PostMapping("/post")
