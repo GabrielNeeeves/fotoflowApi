@@ -26,6 +26,8 @@ public class UsuarioModel {
 
     private String endereco;
 
+    private String role;
+
     public UsuarioModel(){}
 
     public UsuarioModel(UsuarioDto dto) {
@@ -82,5 +84,13 @@ public class UsuarioModel {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
