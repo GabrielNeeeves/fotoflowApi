@@ -1,6 +1,5 @@
 package com.fotoflow.fotoflowApi.model.usuarios;
 
-import com.fotoflow.fotoflowApi.model.usuarios.fotografo.FotografoModel;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,7 +25,8 @@ public class UsuarioModel {
 
     private String endereco;
 
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     public UsuarioModel(){}
 
@@ -36,6 +36,7 @@ public class UsuarioModel {
         this.senha = dto.senha();
         this.telefone = dto.tel();
         this.endereco = dto.endereco();
+        this.role = dto.role();
     }
 
     public Long getId_usuario() {
@@ -86,11 +87,11 @@ public class UsuarioModel {
         this.endereco = endereco;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 }

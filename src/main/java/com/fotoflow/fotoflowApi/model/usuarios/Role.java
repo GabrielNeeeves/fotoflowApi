@@ -1,10 +1,10 @@
 package com.fotoflow.fotoflowApi.model.usuarios;
 
-public enum TipoUsuario {
+public enum Role {
 
     FOTOGRAFO,
     CLIENTE;
 
-    TipoUsuario() {}
+    Role() {}
 
 }
