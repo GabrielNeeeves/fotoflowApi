@@ -278,8 +278,8 @@ CREATE PROCEDURE SP_cadPagamento (
 LANGUAGE plpgsql
 AS $$
 DECLARE
-	cliente_existe boolean;
-	fotografo_existe boolean;
+	cliente_existe BOOLEAN := FALSE;
+    fotografo_existe BOOLEAN := FALSE;
 BEGIN
 	--verificar se Cliente existe
 	SELECT EXISTS(SELECT 1 FROM USUARIOS WHERE ID_USUARIO = sp_CLIENTE_ID) INTO CLIENTE_EXISTE;
