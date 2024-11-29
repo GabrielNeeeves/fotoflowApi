@@ -1,0 +1,130 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f2ea;
+    color: #333;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #5c3d2e;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.auth-buttons button {
+    background: #a83333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.album {
+    background: #5c3d2e;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.imageInput , .image{
+    width: 50%;
+    height: 50%;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+} 
+
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Cabeçalho */
+
+
+
+
+/* Conteúdo principal */
+.main-content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+/* Estilo do botão */
+button {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #b71c1c;
+}
+
+/* Galeria de fotos */
+.photo-gallery {
+    margin-top: 20px;
+}
+
+.photo-gallery h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Ajuste das imagens */
+.photo-gallery img {
+    width: 150px; /* Reduz o tamanho das imagens */
+    height: auto; /* Mantém a proporção */
+    margin: 5px; /* Espaço entre as imagens */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    object-fit: cover; /* Ajusta o conteúdo dentro do tamanho da imagem */
+}
+
+/* Organiza as imagens em lista horizontal */
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as imagens "quebrem" linha se necessário */
+    gap: 10px; /* Espaço entre os elementos */
+}

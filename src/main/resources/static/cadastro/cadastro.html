@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Foto Flow</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <script src="cadastro.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="../index/index.html">
+            <div class="logo">Foto Flow</div>
+        </a>
+    </header>
+    <section class="form-container">
+        <form id="cadastroForm">
+            <h2>Criando sua conta</h2>
+            <h5>Nome completo:</h5>
+            <input type="text" name="nome" placeholder="Digite aqui">
+            <h5>Email:</h5>
+            <input type="email" name="email" placeholder="Digite aqui">
+            <h5>Endereço:</h5>
+            <input type="text" name="ende" placeholder="Digite aqui">
+            <h5>Telefone:</h5>
+            <input type="tel" name="tel" placeholder="Digite aqui">
+            <h5>Senha:</h5>
+            <input type="password" name="senha" placeholder="Digite aqui">
+            <label>
+                Sou fotógrafo(a):
+                <input type="checkbox" id="fotografo" name="fotografo">
+            </label>
+            <button type="submit" class="acessarLogin">Criar Conta</button>
+        </form>
+        <br>
+        <a href="../login/login.html">
+            <button class="acessarLogin">Login</button>
+        </a>
+    </section>
+</body>
+</html>
