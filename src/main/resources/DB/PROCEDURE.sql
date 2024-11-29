@@ -15,7 +15,7 @@ DECLARE
 BEGIN
     -- INSERT USUARIO
     INSERT INTO USUARIOS (NOME, EMAIL, SENHA, TELEFONE, ENDERECO, ROLE)
-    VALUES (nome, email, senha, tel, ende, 'ROLE_FOTOGRAFO')
+    VALUES (nome, email, senha, tel, ende, 'FOTOGRAFO')
     RETURNING ID_USUARIO INTO ultimo_id;
 
     -- INSERT FOTOGRAFO COM O ID CRIADO ACIMA
@@ -23,6 +23,7 @@ BEGIN
     VALUES (ultimo_id, esp, cert);
 END;
 $$;
+
 
 CALL SP_cadFotografo('Maria', 'maria@gmail.com', 'M2R1a123@', '123456789', 'Rua Pereira, 14', 'Urbanismo', 'bacharelado');
 
@@ -82,8 +83,8 @@ DECLARE
     ultimo_id INT;
 BEGIN
     -- Inserindo o usuário e capturando o ID gerado
-    INSERT INTO USUARIOS (NOME, EMAIL, SENHA, TELEFONE, ENDERECO)
-    VALUES (nome, email, senha, tel, ende)
+    INSERT INTO USUARIOS (NOME, EMAIL, SENHA, TELEFONE, ENDERECO, ROLE)
+    VALUES (nome, email, senha, tel, ende, 'CLIENTE')
     RETURNING ID_USUARIO INTO ultimo_id;
 
     -- Inserindo o cliente com o ID do usuário criado
@@ -91,6 +92,7 @@ BEGIN
     VALUES (ultimo_id);
 END;
 $$;
+DROP PROCEDURE SP_cadCliente
 
 CALL SP_cadCliente('Pedro', 'pedro@gmail.com', 'p3dr@a0', '(12)34434-5544', 'Rua Gloria Jardim, 97');
 
